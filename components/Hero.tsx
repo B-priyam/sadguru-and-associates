@@ -147,7 +147,7 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="block"
           >
-            And Associates
+            & Associates
           </motion.span>
         </motion.h1>
 

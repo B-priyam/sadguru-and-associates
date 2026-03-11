@@ -42,7 +42,7 @@ import { useTheme } from "next-themes";
 
 const serviceSubItems = [
   { label: "Real Estate", href: "#services", icon: Building2 },
-  { label: "Mutual Funds", href: "#services", icon: TrendingUp },
+  { label: "Digital Property", href: "#services", icon: TrendingUp },
   { label: "All Types of Loans", href: "#services", icon: Landmark },
   { label: "Insurance", href: "#services", icon: Shield },
   { label: "Legal Advice", href: "#services", icon: Scale },
@@ -142,7 +142,7 @@ const AppSidebar = () => {
                             tooltip={link.label}
                             className="cursor-pointer"
                           >
-                            <link.icon className="h-4 w-4" />
+                            <link.icon className="h-4 w-4 ml-1 " />
                             <span className="flex-1">{link.label}</span>
                             {!collapsed && (
                               <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]/collapsible:rotate-180" />

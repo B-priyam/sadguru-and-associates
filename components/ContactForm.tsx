@@ -20,6 +20,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { toast } from "sonner";
+import Link from "next/link";
 
 const services = [
   "Real Estate Consultation",
@@ -39,20 +40,23 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["123 Financial District", "Mumbai, Maharashtra 400001"],
+    details: [
+      "Ornate Galaxy CHS LTD, B-Wing, Shop No. 116, 1st Floor, Tivri Road, Naigaon East, 401208",
+    ],
   },
   {
     icon: Mail,
     title: "Email Us",
     details: [
-      "contact@thesadguruassociates.com",
-      "info@thesadguruassociates.com",
+      "thesadguru.2025@gmail.com",
+      "thesadguru.2026@homesinwesternline.in",
+      //   "info@thesadguruassociates.com",
     ],
   },
   {
     icon: Clock,
     title: "Working Hours",
-    details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sunday: Closed"],
+    details: ["Mon - Sun: 9:00 AM - 7:00 PM"],
   },
 ];
 
@@ -169,9 +173,18 @@ const ContactForm = () => {
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h4>
                   {item.details.map((detail) => (
-                    <p key={detail} className="text-muted-foreground text-sm">
-                      {detail}
-                    </p>
+                    <Link
+                      href={
+                        item.title === "Email Us"
+                          ? `mailto:${detail.split(" ")[0]}`
+                          : ""
+                      }
+                      key={detail}
+                    >
+                      <p key={detail} className="text-muted-foreground text-sm">
+                        {detail}
+                      </p>
+                    </Link>
                   ))}
                 </div>
               </motion.div>

@@ -39,6 +39,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const serviceSubItems = [
   { label: "Real Estate", href: "#services", icon: Building2 },
@@ -105,8 +106,15 @@ const AppSidebar = () => {
           onClick={() => scrollToSection("#home")}
           className="flex items-center gap-3 group"
         >
-          <div className="-ml-2 w-10 h-10 min-w-[2.5rem] rounded-xl bg-gradient-to-br from-primary via-primary-royal to-gold flex items-center justify-center shadow-glow-sm">
-            <span className="text-primary-foreground font-bold text-lg">S</span>
+          <div className="-ml-2 w-10 h-10 min-w-[2.5rem] rounded-xl bg-white from-primary via-primary-royal to-gold flex items-center justify-center shadow-glow-sm">
+            <Image
+              src={"/images/logo.png"}
+              alt="logo"
+              height={100}
+              width={100}
+              className="h-9 w-9"
+            />
+            {/* <span className="text-primary-foreground font-bold text-lg">S</span> */}
           </div>
           {!collapsed && (
             <div className="overflow-hidden">
@@ -130,11 +138,7 @@ const AppSidebar = () => {
 
                 if (link.children) {
                   return (
-                    <Collapsible
-                      key={link.label}
-                      defaultOpen
-                      className="group/collapsible"
-                    >
+                    <Collapsible key={link.label} className="group/collapsible">
                       <SidebarMenuItem>
                         <CollapsibleTrigger>
                           <SidebarMenuButton

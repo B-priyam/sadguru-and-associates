@@ -174,10 +174,14 @@ const ContactForm = () => {
                   </h4>
                   {item.details.map((detail) => (
                     <Link
+                      target="_blank"
                       href={
                         item.title === "Email Us"
                           ? `mailto:${detail.split(" ")[0]}`
-                          : ""
+                          : item.title === "Visit Us"
+                            ? `http://maps.google.com/?q=1200 Ornate Galaxy CHS LTD, B-Wing, Shop No. 116, 1st Floor, Tivri
+                  Road, Naigaon East, 401208`
+                            : ""
                       }
                       key={detail}
                     >
